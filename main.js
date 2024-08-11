@@ -70,9 +70,9 @@ function animate() {
 renderer.setAnimationLoop( animate );
 
 
-// // Simple ideas:
-// // Spinning blahaj x]
+// Simple ideas:
+// [x] Spinning blahaj x]
 
-// // Complex ideas:
-// // 90s themed room looking out the window with runescape on the crt
-// // Social sim of moving an avatar of me around a room, isometric viewpoint, certain articles highlighted are context objects detailing my life
+// Complex ideas:
+// 90s themed room looking out the window with runescape on the crt
+// Social sim of moving an avatar of me around a room, isometric viewpoint, certain articles highlighted are context objects detailing my life

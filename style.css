@@ -2,6 +2,15 @@ body {
   background-color: #00ada2;
   color: #763679;
   font-family: monospace;
+  font-weight: lighter;
+}
+
+.title {
+  font-size: 64px;
+}
+
+.subtitle {
+  font-size: 24px;
 }
 
 #canvas-container {
