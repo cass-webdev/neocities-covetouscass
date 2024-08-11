@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
 // #########################
 // ##### Web GL Checks #####
@@ -29,7 +28,7 @@ var shark;
 
 loader.load(
 	// resource URL
-	'low_poly_blahaj_gltf/scene.gltf',
+	'assets/shark/scene.gltf',
 	// called when the resource is loaded
 	function ( gltf ) {
     shark = gltf.scene;
