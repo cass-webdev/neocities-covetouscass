@@ -1,27 +1,28 @@
 import * as THREE from 'three';
-// import WebGL from 'three/addons/capabilities/WebGL.js';
+import WebGL from 'three/addons/capabilities/WebGL.js';
 
-// if ( WebGL.isWebGL2Available() ) {
+if ( !WebGL.isWebGL2Available() ) {
 
-// 	// Initiate function or other initializations here
-// 	animate();
+	// Initiate function or other initializations here
+	animate();
 
-// } else {
+} else {
 
-// 	const warning = WebGL.getWebGL2ErrorMessage();
-// 	document.getElementById( 'container' ).appendChild( warning );
+	const warning = WebGL.getWebGL2ErrorMessage();
+	document.getElementById( 'canvas-container' ).appendChild( warning );
 
-// }
+}
 
-console.log('SOMETHING');
+const CANVAS_WIDTH = 800;
+const CANVAS_HEIGHT = 600;
 
 const scene = new THREE.Scene();
 // Camera params - fov, aspect ratio, near clipping plane, far clipping plane
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const camera = new THREE.PerspectiveCamera( 75, CANVAS_WIDTH / CANVAS_HEIGHT, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
+renderer.setSize( CANVAS_WIDTH / CANVAS_HEIGHT );
+document.getElementById('canvas-container').append( renderer.domElement ); // Shouldn't need to keep a canvas-container ref alive
 
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
@@ -38,6 +39,10 @@ function animate() {
 }
 renderer.setAnimationLoop( animate );
 
-// Ideas:
+
+// Simple ideas:
+// Spinning blahaj x]
+
+// Complex ideas:
 // 90s themed room looking out the window with runescape on the crt
 // Social sim of moving an avatar of me around a room, isometric viewpoint, certain articles highlighted are context objects detailing my life

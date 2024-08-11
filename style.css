@@ -3,3 +3,8 @@ body {
   color: #763679;
   font-family: monospace;
 }
+
+#canvas-container {
+  width: 800px;
+  height: 600px;
+}
