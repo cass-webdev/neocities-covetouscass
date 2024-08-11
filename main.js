@@ -20,18 +20,11 @@ renderer.setSize( CANVAS_WIDTH, CANVAS_HEIGHT );
 
 document.body.appendChild( renderer.domElement );
 // White directional light at half intensity shining from the top.
-const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.8 );
+const directionalLight = new THREE.DirectionalLight( 0xffffff, 1.0 );
 scene.add( directionalLight );
 
 // Load a glTF resource
 const loader = new GLTFLoader();
-
-// Optional: Provide a DRACOLoader instance to decode compressed mesh data
-// ^^ Not sure if this is working anyways ^^
-const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath( '/examples/jsm/libs/draco/' );
-loader.setDRACOLoader( dracoLoader );
-
 var shark;
 
 loader.load(
