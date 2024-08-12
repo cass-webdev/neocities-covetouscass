@@ -1,6 +1,10 @@
 @font-face {
+   /* Thanks to https://stackoverflow.com/questions/24990554/how-to-include-a-font-ttf-using-css for guiding me to https://transfonter.org/ to use woff instead of ttf */
   font-family: 'rainyhearts';
-  src: url('assets/rainyhearts.ttf');
+  font-weight: 500;
+  font-style: normal;
+  src: url('assets/fonts/rainyhearts.woff2') format('woff2'),
+       url('assets/fonts/rainyhearts.woff') format('woff');
 }
 
 body {
