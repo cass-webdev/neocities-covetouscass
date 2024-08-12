@@ -1,34 +1,97 @@
+@font-face {
+  font-family: 'rainyhearts';
+  src: url('assets/rainyhearts.ttf');
+}
+
 body {
   background-color: #00ada2;
 
   /* Fonts */
   color: #763679;
-  font-family: monospace;
+  font-family: 'rainyhearts';
   font-weight: lighter;
+}
 
+a {
+  color: #d9edab;
+  text-decoration: none;
+}
+
+/* Uncomment when I build other pages \o/ */
+/* a:visited {
+  color: #2dff70;
+} */
+
+.body-content {
   /* Layout */
   max-width: 1200px;
   display: flex;
   flex-flow: row wrap;
 }
 
-.links {
-  max-width: inherit;
+.taglines {
+  width: 100%;
 }
 
-.title {
-  font-size: 64px;
-}
-
-.subtitle {
+.intro {
+  flex-basis: 50%;
   font-size: 24px;
 }
 
-#canvas-container {
+.extras {
+  flex-basis: 50%;
+
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+/* Header */
+.header {
+  width: 100%;
+}
+
+
+/* Canvas */
+#canvas {
   max-width: 600px;
   max-height: 400px;
 }
 
+
+/* Text */
+.title {
+  font-size: 64px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 32px;
+}
+
+.context-clue {
+  color: #DBDBDB;
+}
+
+
+/* Lists */
 ul {
   list-style: none;
+}
+
+.links {
+  display: flex;
+  max-width: inherit;
+  justify-content: center;
+}
+
+.links > li {
+  flex-basis: 80px;
+  text-align: center;
+}
+
+
+/* Footer */
+.footer {
+  width: 100%;
 }

@@ -6,7 +6,7 @@ const CANVAS_HEIGHT = 400;
 let scene, renderer, camera, canvasElem, shark;
 
 function setupScene() {
-	canvasElem = document.getElementById('canvas-container');
+	canvasElem = document.getElementById('canvas');
 	scene = new THREE.Scene();
 	// Camera params - fov, aspect ratio, near clipping plane, far clipping plane
 	camera = new THREE.PerspectiveCamera( 75, CANVAS_WIDTH / CANVAS_HEIGHT, 0.1, 1000 );
@@ -27,7 +27,7 @@ function addLighting() {
 
 async function gltfLoader() {
 	const loader = new GLTFLoader();
-	const gltfData = await modelLoader('assets/shark/scene.gltf', loader);
+	const gltfData = await modelLoader('assets/models/shark/scene.gltf', loader);
 	shark = gltfData.scene;
 	scene.add(shark);
 }
