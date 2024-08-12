@@ -1,8 +1,19 @@
 body {
   background-color: #00ada2;
+
+  /* Fonts */
   color: #763679;
   font-family: monospace;
   font-weight: lighter;
+
+  /* Layout */
+  max-width: 1200px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.links {
+  max-width: inherit;
 }
 
 .title {
@@ -14,6 +25,10 @@ body {
 }
 
 #canvas-container {
-  width: 800px;
-  height: 600px;
+  max-width: 600px;
+  max-height: 400px;
+}
+
+ul {
+  list-style: none;
 }
