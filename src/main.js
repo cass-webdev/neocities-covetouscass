@@ -9,25 +9,28 @@ function setupScene() {
 	canvasElem = document.getElementById('canvas');
 	scene = new THREE.Scene();
 	// Camera params - fov, aspect ratio, near clipping plane, far clipping plane
-	camera = new THREE.PerspectiveCamera( 75, CANVAS_WIDTH / CANVAS_HEIGHT, 0.1, 1000 );
-	camera.position.z = 5;
+	camera = new THREE.PerspectiveCamera(75, CANVAS_WIDTH / CANVAS_HEIGHT, 0.1, 1000);
+	camera.position.z = 4;
 
 	renderer = new THREE.WebGLRenderer({
 		canvas: canvasElem
 	});
-	renderer.setSize( CANVAS_WIDTH, CANVAS_HEIGHT );
+	renderer.setSize(CANVAS_WIDTH, CANVAS_HEIGHT);
 	canvasElem.innerHTML = renderer.domElement; // need to attach canvas to specific container
 }
 
 function addLighting() {
-	// White directional light at half intensity shining from the top.
-	const directionalLight = new THREE.DirectionalLight( 0xffffff, 1.0 );
-	scene.add( directionalLight );
+	// White directional light shining from above and in front.
+	const topFrontLight = new THREE.DirectionalLight(0xffffff, 0.6);
+	topFrontLight.position.y = 100;
+	topFrontLight.position.z = 100;
+
+	scene.add(topFrontLight);
 }
 
 async function gltfLoader() {
-	const loader = new GLTFLoader();
-	const gltfData = await modelLoader('assets/models/shark/scene.gltf', loader);
+	const gltfLoader = new GLTFLoader();
+	const gltfData = await modelLoader('assets/models/shark/scene.gltf', gltfLoader);
 	shark = gltfData.scene;
 	scene.add(shark);
 }
@@ -46,7 +49,7 @@ async function init() {
 	addLighting();
 	await gltfLoader();
 
-	renderer.setAnimationLoop( animate );
+	renderer.setAnimationLoop(animate);
 }
 
 init();
@@ -56,7 +59,7 @@ init();
 // loader with promises and async/await
 function modelLoader(url, loader) {
   return new Promise((resolve, reject) => {
-    loader.load(url, data=> resolve(data), null, reject);
+    loader.load(url, data => resolve(data), null, reject);
   });
 }
 
