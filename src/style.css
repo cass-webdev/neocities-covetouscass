@@ -1,5 +1,6 @@
 @font-face {
    /* Thanks to https://stackoverflow.com/questions/24990554/how-to-include-a-font-ttf-using-css for guiding me to https://transfonter.org/ to use woff instead of ttf */
+   /* Note to self - rainyhearts is 16px only it seems */
   font-family: 'rainyhearts';
   font-weight: 500;
   font-style: normal;
